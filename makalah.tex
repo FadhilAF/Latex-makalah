@@ -1,8 +1,23 @@
-\documentclass[a4paper,12 pt]{article}
-\usepackage{graphicx}
-\usepackage[bahasa]{babel}
-\usepackage{color}
-\usepackage{amsmath}
+\documentclass[a4paper,12 pt]{article}%jenis kertas latex yang dibikin
+\usepackage{graphicx}%biar biso ganti2 warno (dk usah dpp)
+\usepackage{color}%biar biso ganti2 warno (dk usah dpp)
+\usepackage{amsmath}%biar biso lambang math (dk usah dpp)
+\usepackage{amsfonts}%biar biso bikin lambang bilangan real (dk usah dpp)
+\usepackage[style=authoryear,sorting=nyt,citestyle=authoryear]{biblatex}%untuk referensi pake file bib
+\usepackage{arabtex}%biar biso tulis bhs arab
+\usepackage{utf8}%biar biso arab jg (perlu 2)
+
+\bibliography{data}%namo file bib nyo "data"
+\DefineBibliographyStrings{english}{ %untuk ngubah dikit ado kato yang dak te-translate
+    in  = {di},
+    and = {dan},
+    pages = {hal.}
+}
+\renewcommand\nameyeardelim{, }%biar pas nge-cite ado komanyo (Name, year)
+
+\renewcommand{\thesubsection}{\Alph{subsection}.}%biar subsectionnyo A. bukan 0.A
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}.}%biar sub sub nyo 1., 2. bae bukan 0.A.1
+%\renewcommand{namo bagian yang nak diubah penomoran}{cak mano penomoran nyo}
 \usepackage{geometry}
 \geometry{
     top = 4 cm,
@@ -10,34 +25,248 @@
     bottom = 3 cm,
     right = 3 cm
 }
+\usepackage{tocloft}%package utk method dibawah 
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}%biar bagian yang part dikasih titik2 di Daftar Isi
 
-\title{\textbf{Makalah}\linebreak \\ \textbf{Konsep Islam terhadap isu-isu kontemporer(Kebudayaan Islam)}\\[1\baselineskip] \normalsize{\textbf{(Disusun untuk tugas mata kuliah Pendidikan Agama Islam)}}}
+\usepackage{titletoc}%ngatur jarak antar part di Daftar isi
+
+    \titlecontents{part}%namo jenis judul yang dipilih
+    [0em] %indentationnyo di Daftar isi
+    {\vspace{8pt}\bfseries} %{jarak vertikal antar parts dgn yg lain|jenis textny nak di bold/italic/dll}
+    {\thecontentslabel\quad}%numbered parts
+    {}%numberless parts
+    {\titlerule*[0.7pc]{.}\contentspage}
+
+    \titlecontents{section}%cak pocok tulah
+    [0em] %
+    {\vspace{8pt}\bfseries}
+    {\thecontentslabel\quad}%numbered section
+    {}%numberless section
+    {\hfill\contentspage}
+
+\title{\textbf{Makalah}\linebreak \\ 
+\textbf{Konsep Islam terhadap Isu-Isu Kontemporer(Kebudayaan Islam)}\\[1\baselineskip] 
+\normalsize{\textbf{(Disusun untuk tugas mata kuliah Pendidikan Agama Islam)}}}
 
 \date{}
 \author{}
 
 \begin{document}
 \maketitle
-\begin{center}
+\pagenumbering{roman}%untuk mulai ngitungi page nyo pake i ii iii
+\thispagestyle{empty}%untuk ngilangi halaman (letaknyo mesti dibawah maketitle soalnyo dalam \maketitle lah ado pagestyle internally)
+
+\begin{center}%
 \includegraphics[width=5cm]{unsri.png}
 \end{center}
 \vspace{1 cm}
 
+\addcontentsline{toc}{part}{JUDUL}%buat part hantu, tak tertulis tapi ada
+
 \begin{center}
-Disusun oleh:\\[1\baselineskip]
-\begin{tabular}{ll} %itu el el L L
-Muhammad Fadhil Al-Fatih &: 09021282126078\\ 
+    Disusun oleh:\\[1\baselineskip]
+\begin{tabular}{ll} %bukan satu satu (11) tapi el el (ll)
+Nur Su'udiyah &: 09021182126020\\
+Muhammad Dary Alfaris &: 09021282126038\\
+Rajab Agung &: 09021282126060\\
+Muhammad Fadhil Al-Fatih &: 09021282126078\\
+M Agil Faturrahman &: 09021282126110\\
+Fascal Harya Putra &: 09021282126116
 \end{tabular}\\[2\baselineskip]
 
 Prodi Teknik Informatika\\
 Fakultas Ilmu Komputer\\ 
-\textit{Universitas Sriwijaya}
-\linebreak 
-Palembang 2021 \linebreak 
+\textit{Universitas Sriwijaya}\linebreak 
+Palembang 2021\linebreak 
 \end{center}
+\clearpage%untuk langsung ke page baru
 
+\addcontentsline{toc}{part}{KATA PENGANTAR}
+\begin{center}
+    \section*{KATA PENGANTAR}
+\end{center}
+%\setcode{utf8}%perlu ditulis ini men nak arab
+%\<
+%السَلامُ عَليكم ورَحمةُ الله وبَركاته 
+%> %mesti dikasih \<...> utk nulis arab
+Atas nikmat dan limpahan karunia Allah SWT, Atas Izin-Nya, kami dapat menyelesaikan makalah ini 
+dengan tepat waktu. Tak lupa pula shalawat serta salam kepada junjungan Nabi Besar Muhammad SAW.
+Beserta keluarganya, para sahabatnya, dan seluruh ummatnya yang istiqomah hingga akhir zaman.
 
-\section{Kemarahan Rasulullah}
-\paragraph{Rasulullah SAW adalah manusia yang bagus semua or
-           dikarenakan kesungguhanya subhanallah wa nikmal ya kinnn}
+Penulisan makalah ini bertujuan untuk memenuhi tugas kelompok mata kuliah Pendidikan Agama Islam
+berjudul Konsep Islam terhadap Isu-Isu Kontemporer(Kebudayaan Islam).
+
+Dalam makalah ini kami menguraikan materi mengenai bagaimana seharusnya kita menanggapi isu-isu
+zaman sekarang dari berbagai sumber, dan dengan opini yang senetral mungkin (tidak berpihak ke mana 
+pun).
+
+Kami menyadari bahwa makalah ini masih jauh dari sempurna. Karena itu kami akan terus belajar
+dan membuat makalah yang lebih baik lagi di masa mendatang. Harapan kami semoga makalah ini 
+akan bermanfaat. 
+\\
+\begin{flushright}
+Palembang, September 2021\\[1\baselineskip]%untuk tambah 1 enter setelah nulis "\\"
+
+Penyusun
+\end{flushright}
+\clearpage
+
+\thispagestyle{empty} %biar katek nomor jg
+\renewcommand{\contentsname}{\hfill\bfseries\Large DAFTAR ISI\hfill}%ngatur letak tempat "DAFTAR ISI"
+\renewcommand{\cftaftertoctitle}{\hfill}%ngatur line sesudah judul daftar isi, \hfill itu buat ngisi full kosong
+\addcontentsline{toc}{part}{DAFTAR ISI}%biar Daftar isi temasuk kedalem daftar isi (bikin section hantu, tak tertulis tapi ada)
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}%buat mulai nomori pagenyo ke 1
+\addcontentsline{toc}{section}{BAB I}%section hantu
+\begin{center}
+    \section*{BAB I\\PENDAHULUAN}%section tanpa nomor
+\end{center}
+%\setcounter{section}{1}%Biar ado nomor sectionnyo, soalnyo kito milih section yang katen nomor sblmny
+\setcounter{subsection}{0}%Biar nomor subsection mulai dari 1 atau A
+\subsection{Latar Bekalang}
+Teknologi, keadaan sosial, budaya, dan adab sudah sangat berbeda jika kita bandingkan dengan zaman 
+dahulu. Dimulai dari perkembangan teknologi yang berhasil menciptakan alat untuk melakukan
+kalkulasi, dapat pula mengeluarkan keluaran untuk ditangkap oleh alat lain, dan juga sistem
+penghubung besar yang berjalan dengan baik, membuat perpindahan informasi yang sangat cepat 
+bisa terjadi. Keadaan sosial yang dulunya sangat lumrah terjadi perbudakan, tidak memberi hak
+kepada wanita, dan membeda-bedakan hak istimewa sesuai dengan ras. Sekarang hak asasi manusia sudah 
+berlaku dengan sangat baik, perbudakan sudah menjadi masa lalu kelam bagi umat manusia dan tidak
+terjadi lagi, hak-hak wanita sudah ada dan berjalan dengan baik, dan rasisme sudah mulai berkurang.
+Bahkan, bukan hanya zaman saja yang membedakan ini, tetapi perbedaan wilayah juga dapat membuat
+keadaan keadaan sosial sangat berbeda. 
+
+Oleh karena itu, tentu tantangan zaman sekarang akan jadi sangat berbeda dengan tantangan yang 
+dihadapi pada zaman dahulu. Akan ada banyak hal-hal yang bisa diterima jika dilakukan pada zaman
+dahulu, tetapi sangat tidak diterima jika dilakukan pada zaman sekarang, begitu juga sebaliknya,
+ada banyak hal-hal yang bisa diterima jika dilakukan pada zaman dahulu, tetapi sangat tidak 
+diterima pada zaman sekarang. Demikian juga seperti yang disampaikan sebelumnya, perbedaan wilayah juga
+dapat menjadi faktor apakah hal-hal tersebut dapat diterima oleh orang-orang atau tidak dapat. 
+Akan selalu ada jawaban tepat yang berbeda untuk masa yang berbeda juga, dan tidak akan ada jawaban
+yang paling sempurna untuk menjawabnya. Akan selalu ada pertentangan dan kekurangan pada setiap
+hal yang dilakukan manusia.
+
+Isu-isu kontemporer berarti isu-isu yang ada pada zaman sekarang, yang pastinya setiap
+isu itu sangat kompleks dan tidak mungkin dapat dijelaskan dengan sempurna. Isu-isu kontemporer sangat bervariasi, ada yang hanya terjadi di indonesia, ada juga yang terjadi
+di seluruh dunia, atau terjadi hanya di sebagian wilayah lain. Isu-isu kontemporer ada yang
+berkaitan dengan ideogi Islam sendiri, dan ada juga yang sama sekali tidak bersangkutan dengan
+ideologi Islam. Banyak orang yang memiliki pendapat berbeda-beda dalam menanggapi isu-isu tersebut. 
+Konsep Islam terhadap isu-isu kontemporer berarti bagaimana dengan konsep Islam kita dapat 
+menanggapi isu-isu pada zaman sekarang ini. Seperti yang sudah disebutkan sebelumnya, banyak 
+orang termasuk para ahli memiliki pendapat yang berbeda-beda untuk menjawab isu-isu yang kompleks 
+ini. Maka dalam makalah ini akan menjelaskan beberapa isu-isu tersebut dengan sejelas dan 
+sesingkat mungkin dan memuat beberapa pendapat yang dapat menjawab isu-isu zaman sekarang 
+yang sangat kompleks sesuai dengan konsep Islam yang telah dipelajari.
+
+\subsection{Rumusan Masalah}
+Rumusan masalah dalam makalah ini adalah:
+\begin{enumerate}
+    \item Apa yang dimaksud dengan isu kontemporer?
+    \item Bagaimana isu kontemporer dapat terjadi?
+    \item Bagaimana sejarah berjalannya isu tersebut?
+\end{enumerate}
+
+\subsection{Tujuan Penulisan}
+Tujuan Penulisan makalah ini adalah:
+\begin{enumerate}
+    \item Menjelaskan isu-isu kontemporer.
+    \item Menjelaskan alasan terjadinya isu tersebut.
+    \item Menjelaskan sejarah isu kontemporer.
+\end{enumerate}
+\clearpage
+
+%TEMPLATE BIKIN JUDUL BAB_____________________________________________
+\addcontentsline{toc}{section}{BAB II}%section hantu
+\begin{center}
+    \section*{BAB II\\PEMBAHASAN}
+\end{center}
+%\setcounter{section}{2}%biar sectionny jadi nomor 2
+\setcounter{subsection}{0}%biar nomor subsectionnyo balek lagi jadi 1
+%_____________________________________________________________________
+
+\subsection{Islam Liberal}
+\subsubsection{Pengertian}
+Secara bahasa, Islam liberal berarti Islam yang memiliki kebebasan tanpa batas dan bertanggung 
+jawab. Menurut Charles Kurzman, di dalam bukunya \textit{Liberal Islam, A Sourcebook}, menyebut enam gagasan 
+yang dapat dipakai sebagai tolak ukur sebuah pemikiran Islam dapat disebut "Liberal" yaitu: 
+\begin{enumerate}
+    \item Melawan teokrasi, yaitu ide-ide yang hendak mendirikan negara Islam; 
+    \item Mendukung gagasan demokrasi; 
+    \item Membela hak-hak perempuan; 
+    \item Membela hak-hak non-Muslim; 
+    \item Membela kebebasan berpikir; 
+    \item Membela gagasan kemajuan; 
+\end{enumerate}
+Siapapun saja, menurut Kurzman, yang membela salah satu dari enam gagasan di atas, maka ia adalah 
+seorang Islam Liberal\parencites{zaki}.
+\subsubsection{Asal-usul}
+Pemikiran liberal Islam mempunyai akar yang jauh sampai di masa keemasan Islam (the golden age of 
+Islam). Teologi rasional Islam yang dikembangkan oleh Mu'tazilah  dan para filsuf, seperti al-Kindi, 
+al-Farabi, Ibn Sina, Ibn Rusyd dan sebagainya. Liberalisme Islam mendapatkan momentum secara 
+politis lebih mendalam pada saat kesultanan Ottoman di Turki, yang oleh segelintir cendekiawan di 
+Konstantinopel dirasakan sebagai ketinggalan zaman, terlalu kaku, dan terlalu religius. Diantara 
+tokoh-tokoh cendekiawan itu adalah Sinasi, Ziya Pasha dan Namik Kemal. Di Mesir, juga ada 
+tokoh-tokoh sekaliber di Turki yang liberal, seperti Rifa' Badawi Rafi' al-Tahtawi (1801-1873), 
+Khayr al-Din Pasha (1810-18819), dan Butrus al-Bustam (1819-1883)\parencite{zaki}.
+\subsubsection{Islam Liberal di Indonesia}
+Bibit pemikiran Islam liberal di indonesia sudah muncul semenjak zaman penjajahan, dikarenakan cara 
+pemerintahan dan sistem yang dibuat oleh penguasa pada zaman itu. 
+Wacana pemikiran Islam liberal muncul kali pertama di Indonesia oleh Greg Barton dalam bukunya 
+yang berjudul Gagasan Islam Liberal di Indonesia pada 1999. Semenjak itu, wacana pemikiran Islam 
+liberal menjadi popular, yang kemudian diteruskan oleh Charles Kurzman dalam bukunya Liberal Islam 
+dan Ulil Abshar Abdalla yang tergabung dalam organisasi JIL. Sebagian tokoh liberal rata-rata 
+mulai berkembang pada 1970-an, karena pada waktu itu, kaum intelektual Islam yang mendapatkan 
+pengaruh pemikiran dari Timur Tengah dan Barat mulai muncul seperti Harun Nasution dan Abdurrahman 
+Wahid\parencite{samsudin}.
+
+\subsection{Islam dan Terorisme}
+\subsubsection{Pengertian Terorisme}
+Terorisme dapat diartikan sebagai tindakan kekerasan atau ancaman untuk melakukan tindakan 
+kekerasan yang ditujukan kepada sasaran acak (tidak ada hubungan langsung dengan pelaku) yang 
+berakibat pada kerusakan, kematian, ketakutan, ketidakpastian dan keputusasaan massal. Tindakan 
+terorisme tersebut dilakukan dalam rangka memaksakan kehendak kepada pihak yang dianggap lawan 
+oleh kelompok teroris, agar kepentingan-kepentingan mereka diakui dan dihargai\parencite{mustofa}.
+\subsubsection{Sejarah Perkembangan Terorisme}
+Berdasarkan bebrapa literature, bahwa sesungguhnya sejarah terorisme telah ada sejak beberapa 
+abad yang lalu, seiring dengan sejarah kehidupan manusia. Lembaran sejarah manusia telah diwarnai 
+oleh tindakan-tindakan teror mulai perang psikologis yang ditulis oleh Xenophon (431-350 SM), 
+Kaisar Tiberius (14-37 SM) dan Caligula (37-41 SM) dari Romawi telah mempraktekkan terorisme 
+dalam penyingkiran atau pembuangan, perampasan harta benda dan menghukum lawan-lawan politiknya. 
+Roberspierre (1758- 1794) meneror musuh-musuhnya dalam masa Revolusi Perancis\parencite{junaid}.
+\subsubsection{Asal-Usul Terjadinya Terorisme atas Nama Islam}
+\textit{``Terrorists use \textit{ijtihad} to emphasize Quranic clauses that sanction the use of 
+violent Jihad as a method ordained by God to preserve the \textit{Shariat} in an Islamic community. 
+The manner in which terrorists use \textit{ijtihad} to contextualize geopolitical factors as a 
+cause for violent Jihad is determined by their extreme interpretations of the Quran. These 
+interpretations also determine the extent of violence used in a Jihad for religious amelioration.''}
+\parencite{venkat}
+
+Teroris menggunakan intepretasi ekstrim terhadap ayat-ayat Al-Quran tertentu, lalu dijadikan sebagai 
+pembenaran penggunaan metode kekerasan ekstrim untuk melanjutkan aturan-aturan komunitasnya.
+Penggunaan intepretasi ekstrim ini pun menjadi penyebab banyak kekerasan-kekerasan yang 
+mengatasnamakan jihad untuk "kebangkitan agama" menurut mereka. 
+\clearpage
+
+\addcontentsline{toc}{section}{BAB III}%section hantu
+\begin{center}
+    \section*{BAB III\\PENUTUP}
+\end{center}
+%\setcounter{section}{3}%biar sectionny jadi nomor 2
+\setcounter{subsection}{0}%biar nomor subsectionnyo balek lagi jadi 1
+
+\subsection{Kesimpulan}
+Berdasarkan pembahasan diatas, dapat kita simpulkan bahwa pemikiran bisa berkembang menjadi jauh
+berbeda dari awal pemikiran tersebut dibuat. Seluruh perbuatan manusia memiliki alasan dan tujuannya
+masing-masing. Maka dari itu kita perlu berusaha berkepala dingin untuk menghadapi perbedaan 
+pendapat maupun pemikiran. Islam merupakan agama rahmatan lil alamin, yaitu agama yang merupakan 
+bentuk rahmat dan rasa kasih sayang Allah SWT kepada seluruh alam semesta, Maka tidak ada alasan
+yang mengatasnamakan Islam untuk melakukan kerusakan dan menakut-nakutkan orang lain. Sebagai 
+seorang muslim kita perlu mengedepankan kedamaian dunia. \textit{Wallahu'alam bishawab}.
+
+\clearpage
+\nocite{*}
+\addcontentsline{toc}{part}{DAFTAR PUSTAKA}%biar pustaka masuk dalam pustaka (bikin section hantu, tak tertulis tapi ada)
+\printbibliography[title=DAFTAR PUSTAKA]{}
+
 \end{document}
